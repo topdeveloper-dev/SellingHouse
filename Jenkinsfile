@@ -18,6 +18,21 @@ pipeline {
             }
         }
 
-        
+        stage('List Folders') {
+            steps {
+                script {
+                    // Execute the 'ls' command and capture the output
+                    def folderList = sh(script: 'ls', returnStdout: true).trim()
+                    echo "Folder list: ${folderList}"
+                }
+            }
+        }
+
+        // stage('Copy to Nginx') {
+        //     steps {
+        //         sh 'cp -R build'
+        //     }
+        // }
+
     }
 }
