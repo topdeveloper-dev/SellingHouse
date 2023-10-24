@@ -1,5 +1,11 @@
 pipeline {
-    nodejs 'Node 18.15.0'
+    agent {
+    node {
+        nodejs {
+            name 'Node 18.15.0'
+        }
+    }
+}
 
     stages {
        
